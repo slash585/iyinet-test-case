@@ -1,0 +1,15 @@
+.custom-popover-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.custom-popover-body .custom-popover-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.custom-popover-body .custom-popover-item .custom-popover-item-name {
+    margin-right: .5rem;
+}

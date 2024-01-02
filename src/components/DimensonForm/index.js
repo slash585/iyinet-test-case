@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { Button } from "react-bootstrap";
+import CustomPopover from "../CustomPopover";
 import "./style.css";
 
 const initialValues = {
@@ -24,11 +25,61 @@ const validationSchema = Yup.object({
   quantity: Yup.number().min(0).required("Quantity is required"),
 });
 
-const onSubmit = (event) => {
-  console.log(event);
-};
+const standart20 = 5880 * 2330 * 2380
+const standart40 = 12024 * 2330 * 2380
+const highCube40 = 12024 * 2330 * 2690
 
 function DimensionForm() {
+  const [capacityValues, setCapacityValues] = useState([
+    {
+      name: "20 Standart",
+      value: 0,
+    },
+    {
+      name: "40 Standart",
+      value: 0,
+    },
+    {
+      name: "40 High Cube",
+      value: 0,
+    },
+  ]);
+
+  const onSubmit = (event) => {
+    let width = event.width;
+    let height = event.height;
+    let length = event.length;
+    let quantity = event.quantity === 0 ? 1 : event.quantity
+
+    let cargoCapacity = (width * height * length) * quantity
+
+    calculateCapasity(cargoCapacity)
+
+  };
+
+  const calculateCapasity = (cargoCapasity) => {
+    let standart20Capasity = Math.floor(standart20 / cargoCapasity)
+    let standart40Capasity = Math.floor(standart40 / cargoCapasity)
+    let highCube40Capasity = Math.floor(highCube40 / cargoCapasity)
+
+    const newValues = [
+      {
+        name: "20 Standart",
+        value: parseFloat(standart20Capasity),
+      },
+      {
+        name: "40 Standart",
+        value: parseFloat(standart40Capasity),
+      },
+      {
+        name: "40 High Cube",
+        value: parseFloat(highCube40Capasity),
+      },
+    ]
+
+    setCapacityValues(newValues)
+  }
+
   return (
     <div>
       <Formik
@@ -96,8 +147,7 @@ function DimensionForm() {
           </div>
 
           <div className="dimension-form-button-area">
-            <Button type="submit">Save</Button>
-            <Button>Prediction</Button>
+            <CustomPopover capacityValues={capacityValues} />
           </div>
         </Form>
       </Formik>
