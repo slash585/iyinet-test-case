@@ -18,6 +18,7 @@
   border: 1px solid blue;
   border-radius: 5px;
   outline: none;
+  width: 150px;
 }
 
 .dimension-form div label {
@@ -41,6 +42,21 @@
 
 .dimension-form-button-area button {
   width: 45%;
+}
+
+.dimension-form-item-input-with-unit {
+  background-color: white;
+  border: 1px solid blue;
+  border-radius: 5px;
+  padding: .1rem .3rem;
+  display: flex;
+  flex-direction: row;
+}
+
+.dimension-form-item-input-with-unit input {
+  border: none !important;
+  background-color: transparent;
+
 }
 
 @media (max-width: 998px) {

@@ -55,25 +55,37 @@ function DimensionForm() {
 
           <div className="dimension-form-item">
             <label htmlFor="length">Length:</label>
-            <Field type="number" id="length" name="length" />
+            <div className="dimension-form-item-input-with-unit">
+              <Field type="number" id="length" name="length" />
+              <span>mm</span>
+            </div>
             <ErrorMessage className="error" name="length" component="div" />
           </div>
 
           <div className="dimension-form-item">
             <label htmlFor="width">Width:</label>
-            <Field type="number" id="width" name="width" />
+            <div className="dimension-form-item-input-with-unit">
+              <Field type="number" id="width" name="width" />
+              <span>mm</span>
+            </div>
             <ErrorMessage className="error" name="width" component="div" />
           </div>
 
           <div className="dimension-form-item">
             <label htmlFor="height">Height:</label>
-            <Field type="number" id="height" name="height" />
+            <div className="dimension-form-item-input-with-unit">
+              <Field type="number" id="height" name="height" />
+              <span>mm</span>
+            </div>
             <ErrorMessage className="error" name="height" component="div" />
           </div>
 
           <div className="dimension-form-item">
             <label htmlFor="weight">Weight:</label>
-            <Field type="number" id="weight" name="weight" />
+            <div className="dimension-form-item-input-with-unit">
+              <Field type="number" id="weight" name="weight" />
+              <span>kg</span>
+            </div>
             <ErrorMessage className="error" name="weight" component="div" />
           </div>
 
