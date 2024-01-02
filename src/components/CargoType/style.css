@@ -1,0 +1,28 @@
+.cargo-type {
+    padding: 2rem;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card-container .card {
+  background-color: #ffffff;
+  padding: 10px 0 10px 0;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 10px 10px 0 0;
+  width: 90px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.card-container .selected-card {
+    background-color: #0D6EFD;
+    color: white;
+}
+
+.card-container .card-name {
+    margin-top: 1rem;
+}
