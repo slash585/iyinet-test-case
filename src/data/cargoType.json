@@ -1,9 +1,30 @@
 [
-    "box",
-    "bigbags",
-    "sacks",
-    "barrels",
-    "roll",
-    "pipes",
-    "bulk"
+    {
+        "name": "box",
+        "imageUrl": "https://packer.searates.com/images/box.png"
+    },
+    {
+        "name": "bigbags",
+        "imageUrl": "https://packer.searates.com/images/big_bag.png"
+    },
+    {
+        "name": "sacks",
+        "imageUrl": "https://packer.searates.com/images/meshok.png"
+    },
+    {
+        "name": "barrels",
+        "imageUrl": "https://packer.searates.com/images/bochka.png"
+    },
+    {
+        "name": "roll",
+        "imageUrl": "https://packer.searates.com/images/bochka.png"
+    },
+    {
+        "name": "pipes",
+        "imageUrl": "https://packer.searates.com/images/bochka.png"
+    },
+    {
+        "name": "bulk",
+        "imageUrl": "https://packer.searates.com/images/box.png"
+    }
 ]

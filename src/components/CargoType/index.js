@@ -4,11 +4,12 @@ import Icons from "../Icons";
 import "./style.css";
 import Title from "../Title";
 
-const CargoType = () => {
+const CargoType = ({ changeCargoImage }) => {
   const [selectedCardIndex, setSelectedCardIndex] = useState(0);
 
-  const handleClickCard = (index) => {
+  const handleClickCard = (index, imageUrl) => {
     setSelectedCardIndex(index);
+    changeCargoImage(imageUrl)
   };
 
   return (
@@ -20,15 +21,15 @@ const CargoType = () => {
             <div
               key={index}
               onClick={() => {
-                handleClickCard(index);
+                handleClickCard(index, item.imageUrl);
               }}
               className={`card ${
                 selectedCardIndex === index ? "selected-card" : ""
               }`}
             >
-              <Icons iconName={item} />
+              <Icons iconName={item.name} />
               <div className="card-name">
-                {item.charAt(0).toUpperCase() + item.slice(1)}
+                {item.name.charAt(0).toUpperCase() + item.name.slice(1)}
               </div>
             </div>
           );

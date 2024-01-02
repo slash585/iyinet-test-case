@@ -1,15 +1,16 @@
-import React from 'react'
+import { React } from 'react'
 import './style.css'
 import Title from '../Title'
 import DimensionForm from '../DimensonForm'
 
-function CargoDimension() {
+function CargoDimension({ cargoImage }) {
+
   return (
     <div className='cargo-dimension'>
       <Title text={"2.Select Cargo Dimension"} />
       <div className='dimension-area'>
         <div className='box-image'>
-          <img src='https://packer.searates.com/images/box.png' alt='dimension-image' />
+          <img src={cargoImage} alt='dimension' />
         </div>
         <div className='form-area'>
           <DimensionForm />
