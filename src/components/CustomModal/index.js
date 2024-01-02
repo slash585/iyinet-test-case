@@ -1,6 +1,7 @@
 import { React } from 'react'
 import { Modal } from 'react-bootstrap'
 import CargoType from '../CargoType'
+import CargoDimension from '../CargoDimension'
 
 const CustomModal = ({ show, closeModalHandler }) => {
 
@@ -13,6 +14,7 @@ const CustomModal = ({ show, closeModalHandler }) => {
             <Modal size="lg" show={show} onHide={handleClose}>
                 <Modal.Body>
                     <CargoType />
+                    <CargoDimension />
                 </Modal.Body>
             </Modal>
         </div>

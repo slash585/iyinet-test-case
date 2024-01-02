@@ -20,7 +20,7 @@ const Icons = ({ iconName }) => {
       ? faSackDollar
       : iconName === "pipes"
       ? faSackDollar
-      : iconName === "Bulk"
+      : iconName === "bulk"
       ? faSackDollar
       : "";
   };
