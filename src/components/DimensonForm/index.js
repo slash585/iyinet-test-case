@@ -2,7 +2,7 @@ import React from "react";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { Button } from "react-bootstrap";
-import './style.css'
+import "./style.css";
 
 const initialValues = {
   productName: "",
@@ -17,15 +17,15 @@ const initialValues = {
 const validationSchema = Yup.object({
   productName: Yup.string().required("Product name is required"),
   color: Yup.string().required("Color is required"),
-  length: Yup.number().required("Length is required"),
-  width: Yup.number().required("Width is required"),
-  height: Yup.number().required("Height is required"),
-  weight: Yup.number().required("Weight is required"),
-  quantity: Yup.number().required("Quantity is required"),
+  length: Yup.number().min(0).required("Length is required"),
+  width: Yup.number().min(0).required("Width is required"),
+  height: Yup.number().min(0).required("Height is required"),
+  weight: Yup.number().min(0).required("Weight is required"),
+  quantity: Yup.number().min(0).required("Quantity is required"),
 });
 
 const onSubmit = (event) => {
-  console.log(event)
+  console.log(event);
 };
 
 function DimensionForm() {
@@ -40,7 +40,11 @@ function DimensionForm() {
           <div className="dimension-form-item">
             <label htmlFor="productName">Product name:</label>
             <Field type="text" id="productName" name="productName" />
-            <ErrorMessage className="error" name="productName" component="div" />
+            <ErrorMessage
+              className="error"
+              name="productName"
+              component="div"
+            />
           </div>
 
           <div className="dimension-form-item">
